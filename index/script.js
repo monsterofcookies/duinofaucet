@@ -1,48 +1,7 @@
 
 //URL FOR THE API SO I DO NOT HAVE TO MESS QROUND WITH THE DAMN API
-// const URL = 'https://ducofaucetapi.tailc6c055.ts.net';
-// const URL = 'https://duinofaucet.brown-goblin.ts.net';
-const URL = 'https://investigate-herb-dl-launches.trycloudflare.com';
-// const URL = 'https://duinofaucetapi.onrender.com';
-// const URL = 'http://localhost:8000';
-
-document.addEventListener('DOMContentLoaded', function() {
-    let links = [
-        'https://shasogna.com/4/7535645',
-        'https://shaveeps.net/4/7535644',
-        'https://rndnoibattor.com/4/7535643',
-        'https://shasogna.com/4/7535642',
-        'https://thefacux.com/4/7535641',
-        'https://whulsaux.com/4/7535640',
-        'https://nukeluck.net/4/7405382',
-        'https://auptirair.com/4/7407217',
-        'https://nabauxou.net/4/7405378',
-        'https://hoglinsu.com/4/7452369'
-    ];
-
-    function getRandomLink() {
-        return links[Math.floor(Math.random() * links.length)];
-    }
-
-    document.body.addEventListener('click', function() {
-        let chance = Math.random();
-        let randomLink = getRandomLink();
-
-        if (chance < 0.48) { // 40% chance
-            let newWindow = window.open(randomLink, '_blank');
-            if (newWindow) {
-                newWindow.focus();
-            } else {
-                // Fallback if the browser blocks the pop-up
-                window.location.href = randomLink;
-            }
-        } else {
-            window.location.href = randomLink;
-        }
-    });
-});
-
-
+//ADD YOUR API URLS HERE
+const URL = 'http://localhost:8000';
 
 minerRunning = false;
 
