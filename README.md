@@ -16,6 +16,7 @@ uvicorn app:app --reload
 #
 ## Now that you have the API running with a URL that is public, lets host the index file for the website UI.
 
+NOTE: Remember to change the api URL in the `script.js` file to point towards you API URL without the `/` in the end.
 You can do this in two different ways. 
 
 - Locally host it with public URL (Really Easy)
