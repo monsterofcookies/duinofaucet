@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://alwingulla.com/88/tag.min.js" data-zone="66889" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DuinoFaucet</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external stylesheet -->
+    <link rel="icon" type="image/png" href="icon.png"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
+</head>
+<body onload="countView();">
+    <div class="container">
+        <div class="left-section" style="width:auto;">    
+<div class="banner" style="width:40%;">
+    <a href="https://discord.gg/kf5Ge7nSPD">
+        <img src="bannerad.png" style="scale:0.4;">
+    </a>
+</div>
+
+
+
+        </div>
+        <div class="seperator"></div>
+        
+        <div class="center-section">
+            <div class="formtext">  
+                <h1 class="formtitle">Submit to claim </h1>
+
+                <div class="formdesc">
+                    <h1 style="font-size: 30px;">Buy advertisement space here!<br> Message @_monsterofcookies on discord to buy Banner / PopUp ADs</h1>
+                    <!-- Beta Testing Now Open 
+                    <br>
+                    Hope for a usable faucet in about a week 
+                    <br>
+                    From Date May 15th,24
+                     -->
+                </div> 
+
+            </div>
+            <div class="formbox">
+                <!-- Taking in beta sign ups -->
+                <!-- <form id="temporaryApply" class="temporaryApply">
+                    <label for="tempusername">UserName:</label>
+                    <input type="text" id="tempusername" name="tempusername" placeholder="Your Duino coin Username here" class="tempusername" required>
+                    <br>
+                    <button type="submit" class="tempbutton">Submit</button>
+                </form> -->
+                
+                <form id="Claim">
+                    <label for="username">UserName:</label>
+                    <input type="text" id="username" name="username" placeholder="_monsterofcookies">
+                    <br>
+                    <select id="selOption">
+                        
+                        <option value="24Claim">Claim 5 ducos every 24 hours</option>
+                        <option value="15Claim">Claim random amount every 15 mins</option>
+                    </select>
+                    
+                    <label for="captcha">Math Captcha:</label><br>
+                    <div id="captchaQuestion"></div>
+                    <input type="text" id="captcha" name="captcha" onchange="updateAnswer()" placeholder="Captcha Answer"><br>
+                    <button type="submit" id="submitButton" class="submitButton">Submit</button>
+                </form>
+                
+            </div>
+            <p style="font-size: medium;">Donate to keep the faucet going: <a href="https://explorer.duinocoin.com/?search=_monsterofcookies" style="color: #fe4b12 !important; text-decoration: none;">_monsterofcookies</a></p>
+            OR start the web miner
+            <button onclick="toggleMiner()" id="toggleMiner" class="button">Start Miner</button>
+        </div>
+        
+        <div class="seperator"></div>
+
+        <div class="right-section">
+        </div>
+    </div>
+
+    <div class="stats">
+
+            <div class="graph">
+                <h1 class="graphText">Faucet Views And Balance</h1>
+                <canvas id="statsChart"></canvas>
+
+            </div>
+
+            <div class="transactions">
+                <div class="sentTransactions">
+                    <h2>Sent Transactions</h2>
+                    <table class="styledTable" id="sentTransactionsTable">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable('sentBody', 0)">Amount</th>
+                                <th onclick="sortTable('sentBody', 1)">Date</th>
+                                <th onclick="sortTable('sentBody', 2)">Sender</th>
+                                <th onclick="sortTable('sentBody', 3)">Recipient</th>
+                                <th onclick="sortTable('sentBody', 4)">Memo</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sentBody">
+                            <!-- Sent transactions will be appended here -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="receivedTransactions">
+                    <h2>Received Transactions</h2>
+                    <table class="styledTable" id="receivedTransactionsTable">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable('receivedBody', 0)">Amount</th>
+                                <th onclick="sortTable('receivedBody', 1)">Date</th>
+                                <th onclick="sortTable('receivedBody', 2)">Sender</th>
+                                <th onclick="sortTable('receivedBody', 3)">Recipient</th>
+                                <th onclick="sortTable('receivedBody', 4)">Memo</th>
+                            </tr>
+                        </thead>
+                        <tbody id="receivedBody">
+                            <!-- Received transactions will be appended here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </div>
+
+    <div id="minerContainer">
+    </div>
+    <script src="faucetStatsTable.js"></script>
+    <script src="script.js"></script> <!-- Include script.js -->  
+
+</body>
+</html>
