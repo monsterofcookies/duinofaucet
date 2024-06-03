@@ -1,5 +1,5 @@
 // STAT_URL for the API
-const STAT_URL = 'https://server.duinocoin.com/users/_monsterofcookies';
+const STAT_URL = 'https://server.duinocoin.com/users/(Faucet Username)';
 
 // Function to fetch data from the API and update the tables
 async function fetchDataAndUpdateTables() {
@@ -7,8 +7,8 @@ async function fetchDataAndUpdateTables() {
         const response = await fetch(STAT_URL);
         const data = await response.json();
         const transactions = data.result.transactions;
-        const sentTransactions = transactions.filter(tx => tx.sender === "_monsterofcookies").slice(0, 20);
-        const receivedTransactions = transactions.filter(tx => tx.recipient === "_monsterofcookies").slice(0, 20);
+        const sentTransactions = transactions.filter(tx => tx.sender === "(Faucet Username)").slice(0, 20);
+        const receivedTransactions = transactions.filter(tx => tx.recipient === "(Faucet Username)").slice(0, 20);
         updateTable('sentBody', sentTransactions);
         updateTable('receivedBody', receivedTransactions);
     } catch (error) {

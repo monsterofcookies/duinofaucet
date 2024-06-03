@@ -99,11 +99,11 @@ async def signup(request: Request,username: str = Form(...)):
             return {'message': f'The provided user doesn\'t exist. Username: {username}'}
         else:
             if signupCheck(username):
-                return {'message': f'Sorry signups has been disabled. Please contact @_monsterofcookies on discord for allowance.'}
+                return {'message': f'Sorry signups has been disabled. Please contact <discord username> on discord for allowance.'}
                 # return {'message': f'The provided user has already been added to the list. Username: {username}'}
             else:
                 appendToFile("signups.txt", username)
-                return {'message': f'Sorry signups has been disabled. Please contact @_monsterofcookies on discord for allowance.'}
+                return {'message': f'Sorry signups has been disabled. Please contact <discord username> on discord for allowance.'}
                 # return {'message': f'The provided user has been added to the list. Username: {username}'}
     else:
         return isBanned(clientIp)

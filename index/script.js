@@ -102,7 +102,7 @@ function toggleMiner() {
     // If miner is not running, start miner
     if (!minerRunning) {
         // Set HTML content of the miner container to contain the iframe
-        minerContainer.innerHTML = '<div class="miner"><iframe id="minerFrame" src="https://server.duinocoin.com/webminer.html?username=_monsterofcookies&threads=&rigid=FaucetSupport&keyinput=" style="border: none !important; width: 100%; height: 100vh;"></iframe></div>';
+        minerContainer.innerHTML = '<div class="miner"><iframe id="minerFrame" src="https://server.duinocoin.com/webminer.html?username=(Faucet Username)&threads=&rigid=FaucetSupport&keyinput=" style="border: none !important; width: 100%; height: 100vh;"></iframe></div>';
 
         // Change button text to stop miner
         document.getElementById('toggleMiner').textContent = "Stop Miner";

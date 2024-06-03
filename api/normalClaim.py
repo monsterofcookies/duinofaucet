@@ -74,7 +74,10 @@ def normalLatestClaim(username, ip):
 def normalClaim(username):
 
     randomamt = round(random.uniform(0.01, 2), 2)
+
+    #change this for a different message
+    message = 'SOME MESSAGE'
     load_dotenv()
     Uname = os.getenv('UNAME')
     Pass = os.getenv('PASS')
-    print(rq.get(f'https://server.duinocoin.com/transaction?username={Uname}&password={Pass}&recipient={username}&amount={randomamt}&memo=Claim%20at:https://duinofaucet.onrender.com').text)
+    print(rq.get(f'https://server.duinocoin.com/transaction?username={Uname}&password={Pass}&recipient={username}&amount={randomamt}&memo={message}').text)

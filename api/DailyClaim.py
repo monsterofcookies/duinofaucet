@@ -81,6 +81,9 @@ def dailyClaim(username):
 
     #change this for chaning the faucet payout
     amount = 5
+    #change this for a different message 
+
+    message= 'SOME MESSAGE'
     Uname = os.getenv('UNAME')
     Pass = os.getenv('PASS')
-    print(rq.get(f'https://server.duinocoin.com/transaction?username={Uname}&password={Pass}&recipient={username}&amount={amount}&memo=Claim%20at:https://duinofaucet.onrender.com').text)
+    print(rq.get(f'https://server.duinocoin.com/transaction?username={Uname}&password={Pass}&recipient={username}&amount={amount}&memo={message}').text)

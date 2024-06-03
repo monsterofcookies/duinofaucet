@@ -19,8 +19,3 @@ def userExists(username):
     except rq.RequestException as e:
         return f"Error: {e}"
 
-# username = '_monsterofcookies'
-# if userExists(username):
-#     print(f"User '{username}' exists.")
-# else:
-#     print(f"User '{username}' doesn't exist.")
